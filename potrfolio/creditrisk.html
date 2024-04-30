@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrew Scott</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Custom styles for carousel arrows */
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: #000; /* Dark background color */
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            color: #fff; /* White color for arrow icon */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">Home</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#blog">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header style="background-color: #0b5472;" class="text-light py-3">
+        <div class="container text-center">
+            <h2 class="display-4">Home Credit - Credit Risk Model Stability</h2>
+        </div>
+    </header>
+
+
+    <section id="overview" class="py-3 bg-light">
+        <a href="../index.html#portfolio" class="btn btn-secondary" style="margin: 10px;">Back</a>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="../images/creditrisk-diagram.png" style="width: 100%;">
+                </div>
+                <div class="col-md-6">
+                    <h2 class="mb-4">Overview</h2>
+                    <p> 
+                        Kaggle competition hosted a consumer credit provider who focuses on responsible lending to people with little or no credit history. The aim of the competition was 
+                        to create a credit risk scoring model which remains effective and stable over time. Data Science could help better predict loan repayment capabilities such that
+                        consumer lending can become more inclusive and acessible. If there are less unknowns, then lenders can reduce conservative naive approaches.
+                    </p>
+                    <p>
+                        In this exercise, I explore traditional Machine Learning approaches and Deep Learning approaches. Deep Learning can provide new opportunities for credit modeling
+                        and has not been extensively applied in the real world much as of current. Some reasons being that they are newer methods and are considered "Black Box" models and lack
+                        explainability and transparency. However, proving the credibility of these models can pave the road for more adoption in the industry in the future when explainability methods improve.
+                    </p>
+                    <a href="https://github.com/saltyscott0521/credit_risk_kaggle/tree/main">View on GitHub</a>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="py-3 bg-light">
+        <div class="container">
+            <h2 class="mb-4">Methodology</h2>
+            <div>
+                <p><strong>Data Preparation</strong></p>
+                <p>A significant volume of data was provided for this analysis in many different tables from different sources. We leveraged the blazing-fast Polars Python library for initial cleaning and joining of the different tables to create one DataFrame.&nbsp;</p>
+
+                <p><strong>Feature Engineering</strong></p>
+                <p>This included converting string fields to categorical data types, aggregating nested data, dealing with Null values, and encoding for use in machine learning models.</p>
+
+                <p><strong>Models</strong></p>
+                <p>Logistic Regression: A popular algorithm for credit scoring problems which offers simplicity and transparency. Implemented with Sci-Kit Learn.&nbsp;</p>
+                <p>Decision Tree: Another popular machine learning algorithm for this application. Implemented with Sci-Kit Learn.&nbsp;</p>
+                <p>Light Gradient Boosting Machine: A tree-based algorithm which is much more efficient and usually more accurate than the above. Implemented with Sci-Kit Learn.</p>
+                <p>Neural Networks: Two network architectures were explored. First, a simple Multi-Layer Perceptron with 1 hidden layer and 64 nodes implemented in Keras with a backend of TensorFlow. 
+                    Second, a deeper network with 3 hidden dense layers, dropout layers, and Self-Attention and ran for 30 epochs instead of 10.
+                    Also added to the second model was class weighting to deal with target class imbalance ubiquitously experienced in loan default problems.&nbsp;</p>
+                <img src="../images/creditrisk-results.png" style="width: 60%;">
+                <p>&nbsp;</p>
+
+                <p><strong>Takeaways</strong></p>
+                <p>The Light Gradient Boosting Machine which is industry standard performed the best, with Neural Networks just behind. The much more complicated neural network performed marginally better than the simplified version. It is difficult to further improve upon the work already done in this area for many years, so any small improvements is considered a large feat.&nbsp;</p>
+                <p>The industry should be more welcoming to using neural networks in their loan decision making as they appear to very accurate and able to account for many correlated features in the data.</p>
+            </div>
+            <div>
+                <h2>Report</h2>
+                <object data="Home Credit Kaggle Paper.pdf" type="application/pdf" width="100%" height="600px">
+                    <p>Alternative text - include a link to the PDF here if your browser doesn't support embedded PDFs.</p>
+                </object>
+            </div>
+
+        </div>
+    </section>
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="mb-4">Contact Me</h2>
+            <p>If you'd like to get in touch, feel free to reach out to me at:</p>
+            <ul>
+                <li>Email: <a href="mailto:ac.scott0521@gmail.com">ac.scott0521@gmail.com</a></li>
+                <li>Phone: 813-399-0579</li>
+                <li>GitHub: <a href="https://github.com/saltyscott0521/saltyscott0521">saltyscott0521</a></li>
+                <li>LinkedIn: <a href="https://www.linkedin.com/in/andrew-scott-b817a83b">linkedin.com/in/andrew-scott-b817a83b</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-light py-4">
+        <div class="container text-center">
+            <p>&copy; 2024 Andrew Scott</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

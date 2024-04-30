@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrew Scott</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Custom styles for carousel arrows */
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: #000; /* Dark background color */
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            color: #fff; /* White color for arrow icon */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">Home</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#blog">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header style="background-color: #0b5472;" class="text-light py-3">
+        <div class="container text-center">
+            <h2 class="display-4">Car Crash Fatality Prediction</h2>
+        </div>
+    </header>
+
+
+    <section id="overview" class="py-3 bg-light">
+        <a href="../index.html#portfolio" class="btn btn-secondary" style="margin: 10px;">Back</a>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="../images/carcrash-diagram.png" style="width: 100%;">
+                </div>
+                <div class="col-md-6">
+                    <h2 class="mb-4">Overview</h2>
+                    <p> 
+                        Car crashes are the leading cause of death in the U.S. for people under 54 years old. There is an average of 114 fatal car accidents a per day as of 2020.
+                         
+                    </p>
+                    <p>
+                        In this analysis I take a look at real-world data to investigate if there is potential benefit Data Science can offer in identifying which factors contribute to a fatal 
+                        versus non-fatal car crash. The analysis also attempts to see if fault can be evaluated based on a machine learning algorithm which may help
+                        insurance companies allocate fault in these types of situations.
+                    </p>
+                    <a href="https://github.com/saltyscott0521/Car-Crash-Fatality-Prediction">View on GitHub</a>
+
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="py-3 bg-light">
+        <div class="container">
+            <h2 class="mb-4">Methodology</h2>
+            <div>
+                <p><strong>Data Preparation</strong></p>
+                <p>
+                    Data.gov hosts a dataset of crash reporting data collected from Montgomery County, Maryland which was used as a sample. 
+                    I utilized Apache Spark to store the data to gain familiarity with Spark.  &nbsp;
+                </p>
+
+                <p><strong>Feature Engineering</strong></p>
+                <p>
+                    In order to deal with imbalanced target classes, with fatal accidents being far less common than non-fatal, 
+                    I introduced "Oversampling" to the dataset and saved it back to the Spark table. I then extracted a data set to use in machine learning
+                    models by selecting relevant features such as weather conditions, surface conditions, and substance abuse. These categorical features were 
+                    encoded into numerical vectors for use in Sci-Kit Learn"
+                </p>
+
+                <p><strong>Models</strong></p>
+                <p>Two traditional Machine Learning models were explored to perform this binary classification problem using Sci-Kit Learn, Logistic Regression
+                    and Support Vector Machine. Due to the imbalanced nature of the data, both models have a high accuracy but low precision and recall, yielding a low F1 score.
+                    The model predicts mainly a non-fatal outcome because it is over-represented in the data even despite oversampling. &nbsp;</p>
+                <img src="../images/carcrash-results.png" style="width: 60%;">
+                <p>&nbsp;</p>
+
+                <p><strong>Takeaways</strong></p>
+                <p>Logistic Regression works best in this scenario at least when compared with Support Vector Machine. I believe Data Science 
+                    has the potential to be of use for identifying potentially risky or dangerous conditions to drive. If we can solve the factors which contribute to
+                    fatal accidents, we can advise drivers to be aware of such factors.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="mb-4">Contact Me</h2>
+            <p>If you'd like to get in touch, feel free to reach out to me at:</p>
+            <ul>
+                <li>Email: <a href="mailto:ac.scott0521@gmail.com">ac.scott0521@gmail.com</a></li>
+                <li>Phone: 813-399-0579</li>
+                <li>GitHub: <a href="https://github.com/saltyscott0521/saltyscott0521">saltyscott0521</a></li>
+                <li>LinkedIn: <a href="https://www.linkedin.com/in/andrew-scott-b817a83b">linkedin.com/in/andrew-scott-b817a83b</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-light py-4">
+        <div class="container text-center">
+            <p>&copy; 2024 Andrew Scott</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
